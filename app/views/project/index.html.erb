@@ -1,0 +1,17 @@
+<div class="mt-5 border rounded p-4" style="display: grid;grid-template-columns: repeat(3, minmax(0, 1fr));">
+    <% if @projects.empty? %>
+        <div>
+            <div><h2>No Projects</h2></div>
+            <%= link_to "Append Project", new_project_path, class: "btn btn-success" %>
+        </div>
+    <% end %>
+    <% @projects.each do |project| %>
+        <div class="card m-2">
+            <div class="card-body">
+                <h5 class="card-title"><%= project.title %></h5>
+                <p class="card-text"><%= project.description %></p>
+                <%= link_to "Show Project", project_path(project.id), class: "card-link" %>
+            </div>
+        </div>
+    <% end %>
+</div>

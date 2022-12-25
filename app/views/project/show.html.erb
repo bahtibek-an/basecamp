@@ -1,0 +1,36 @@
+<div class="mt-5 border rounded">
+    <div>
+        <div class="text-center border-bottom">
+            <h1><%= @project.title %></h1>
+        </div>
+        <div class="border-bottom">
+            <div class="text-center"><span>Description:</span></div>
+            <div class="p-2"><p class="mt-2"><%= @project.description %></p></div>
+        </div>
+        <div class="d-flex justify-content-end">
+            <div class="d-flex align-items-center p-2">
+                <%= link_to "Attachments", project_attachments_path(params[:id]), class: "link-dark" %>
+                <%= link_to "Append Thread", project_topic_index_path(params[:id]), class: "link-dark mx-2" %>
+                <%= link_to "Edit Project", edit_project_path(@project.id), class: "link-dark" %>
+                <%= button_to "Destroy", project_path(params[:id]), method: :delete, class: "btn btn-danger py-1 mx-2" %>
+            </div>
+        </div>
+    </div>
+</div>
+<% if @group.is_admin %>
+    <div class="border rounded mt-5">
+        <div class="text-center border-bottom">
+            <h2>Append user to this project</h2>
+        </div>
+        <%= form_for(:groups, url: project_group_index_path(params[:id]), method: "post", class: "d-flex align-items-center p-2") do |f| %>
+            <%= f.collection_select :user_id, @all_users, :id, :email, {:prompt => "Select User"}, {:class=>'form-select'} %>
+            <%= f.hidden_field :project_id, value: params[:id] %>
+            <div class="form-check mx-3">
+                <%= f.check_box :is_admin, class: "form-check-input" %>
+                <%= f.label :is_admin, "Admin" %>
+            </div>
+            <%= f.submit "Append", disable_with: 'Appending...', class: "btn btn-success" %>
+        <% end %>
+    </div>
+    <%= render "project/group/list_users"%>
+<% end %>

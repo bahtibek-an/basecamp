@@ -1,0 +1,7 @@
+<div class="border rounded">
+    <div class="text-center border-bottom p-1"><h3 class="m-0">New Topic</h3></div>
+    <%= form_for(:topic, url: project_topic_index_path(params[:project_id]), class: "d-flex p-2") do |f| %>
+        <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+        <%= f.submit "Append", disable_with: 'Appending...', class: "btn btn-success mx-3" %>
+    <% end %>
+</div>

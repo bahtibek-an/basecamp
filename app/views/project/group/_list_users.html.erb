@@ -1,0 +1,41 @@
+<div class="mt-5 border rounded">
+    <div>
+        <div class="text-center border-bottom">
+            <h2>Members:</h2>
+        </div>
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @users.each do |user| %>
+                    <tr>
+                        <th scope="row"><%= user.user_id %></th>
+                        <td><%= user.email %></td>
+                        <td><%= user.full_name %></td>
+                        <td>
+                            <%= form_for(:groups, url: project_group_path(params[:id], user.id), method: :put) do |f| %>
+                                <div class="form-check form-switch">
+                                    <%= f.check_box :is_admin, checked: user.is_admin == 1, class: "form-check-input", :onclick => "this.form.submit()" %>
+                                    <%= f.label :is_admin, "Admin", class: "form-check-label" %>
+                                </div>
+
+                            <% end %>
+                        </td>
+                        <td>
+                            <%= button_to "Destroy", project_group_path(params[:id], user.user_id), method: :delete, class: "btn btn-danger py-0 px-2" %>
+                        </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

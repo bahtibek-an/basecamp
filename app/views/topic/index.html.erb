@@ -1,0 +1,9 @@
+<% if @group.is_admin %>
+    <div class="border rounded mt-5">
+        <%= render 'topic/new' %>
+    </div>
+<% end %>
+
+<div>
+    <%= render "topic/topic" %>
+</div>

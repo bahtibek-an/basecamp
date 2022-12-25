@@ -1,0 +1,21 @@
+<div class="mt-5 d-flex justify-content-center"> 
+  <div style="width: 400px;">
+    <div class="text-center">
+      <h3>Update a Project</h3>
+    </div>
+    
+    <%= form_for :project, url: project_path(@project.id), method: "put" do |form| %>
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, value: @project.title, placeholder: "Title", class: "form-control" %>
+      </div>
+      <div class="field mt-2">
+        <%= form.label :description %>
+        <%= form.text_field :description, value: @project.description, placeholder: "Description", class: "form-control" %>
+      </div>
+      <div class="d-flex justify-content-end">
+        <%= form.submit value: "Submit", class: "btn btn-success mt-3" %>
+      </div>
+    <% end %>
+  </div>
+</div>

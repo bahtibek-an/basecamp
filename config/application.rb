@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Basecamp2
   class Application < Rails::Application
+    Rails.application.config.hosts << "basecamp-production-02e2.up.railway.app"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 

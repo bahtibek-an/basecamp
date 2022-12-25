@@ -23,7 +23,7 @@
                         <td>
                             <%= form_for(:groups, url: project_group_path(params[:id], user.id), method: :put) do |f| %>
                                 <div class="form-check form-switch">
-                                    <%= f.check_box :is_admin, checked: user.is_admin == 1, class: "form-check-input", :onclick => "this.form.submit()" %>
+                                    <%= f.check_box :is_admin, checked: user.is_admin, class: "form-check-input", :onclick => "this.form.submit()" %>
                                     <%= f.label :is_admin, "Admin", class: "form-check-label" %>
                                 </div>
 

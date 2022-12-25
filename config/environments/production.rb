@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.hosts << "basecamp-production-02e2.up.railway.app"
-
+  config.hosts << /application\.local\Z/
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.

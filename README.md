@@ -11,23 +11,18 @@
 This project is clone of the project BASECAMP
 This project uses bootstrap, gem devise for authorization and database POSTGRESQL
 
-Things you may want to cover:
-
 * Ruby version
-
-
-* System dependencies
-
-* Configuration
+  Ruby: 3.0.2
 
 * Database creation
+Change db from postgresql to sqlite3
+```
+rails db:system:change --to=sqlite3
+rails db:migrate
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Installation
+  ```
+    bundle install
+    rails server
+  ```

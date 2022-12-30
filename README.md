@@ -1,7 +1,15 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+██████╗░░█████╗░░██████╗███████╗░█████╗░░█████╗░███╗░░░███╗██████╗░
+██╔══██╗██╔══██╗██╔════╝██╔════╝██╔══██╗██╔══██╗████╗░████║██╔══██╗
+██████╦╝███████║╚█████╗░█████╗░░██║░░╚═╝███████║██╔████╔██║██████╔╝
+██╔══██╗██╔══██║░╚═══██╗██╔══╝░░██║░░██╗██╔══██║██║╚██╔╝██║██╔═══╝░
+██████╦╝██║░░██║██████╔╝███████╗╚█████╔╝██║░░██║██║░╚═╝░██║██║░░░░░
+╚═════╝░╚═╝░░╚═╝╚═════╝░╚══════╝░╚════╝░╚═╝░░╚═╝╚═╝░░░░░╚═╝╚═╝░░░░░
+```
+<a href="basecamp-production-02e2.up.railway.app">Link to the project</a>
+This project is clone of the project BASECAMP
+This project uses bootstrap, gem devise for authorization and database POSTGRESQL
 
 Things you may want to cover:
 
